@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% set active_page = "registrarse" %}
+
+{% block title %}
+    Registrarse
+{% endblock %}
+
+
+{% block main %}
+
+     <h4> Si deseas hacer parte de esta comunidad universitaria de mercados bursatiles te invitamos a crear tu cuenta!</h4>
+
+    <div class="benefi">
+    <h6> Algunos beneficios que obtienes al unirte a esta comunidad son:</h6>
+    </div>
+
+    <ul class="list-group">
+
+<di class="letter">
+<ul class="list-group mx-4">
+  <li class="list-group-item list-group-item-action list-group-item-dark">Compra de más de 100 tipos de acciones diferentes de todo tipo de industrias</li>
+  <li class="list-group-item list-group-item-action list-group-item-dark">Venta de más de 100 acciones de multiples mercados y empresas</li>
+  <li class="list-group-item list-group-item-action list-group-item-dark">Cotizar en tiempo real el valor de estas mismas acciones a cualquier hora en cualquier dia</li>
+  <li class="list-group-item list-group-item-action list-group-item-dark">Posiblidad de acceder en todo momento a los estados financieros de su portafolio</li>
+  <li class="list-group-item list-group-item-action list-group-item-dark">Acceso al historial de operaciones de su cuenta desde su primera operacion realizada</li>
+</ul>
+
+</di>
+
+    <div class="crea">
+    <h6> Crea el usuario y contraseña de tu cuenta!</h6>
+    </div>
+
+    <div class="por">
+    <form action=/register method="post">
+
+        <div class= "form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Usuario" type = "text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="password" placeholder="Contraseña" type = "password">
+        </div>
+        <div class="form-group">
+            <input automcomplete="off" autofocus class="form-control" name="confirmation" placeholder="Confirmar Contraseña" type ="password">
+        </div>
+
+        <div class="try">
+        <button class="btn btn-primary" type="submit"> Registrarse</button>
+        </div>
+
+    </form>
+    </div>
+
+{% endblock %}

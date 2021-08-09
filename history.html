@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% set active_page = "historial" %}
+
+{% block title %}
+    Historial de Transacciones
+{% endblock %}
+
+{% block main %}
+
+     <div class="time"> {{val[0][0]}} {{val[0][1]}} {{val[0][2]}}</div>
+
+    <div class = "table">
+    <table class= "table table-hover table-dark">
+        <thead>
+            <tr>
+                <th> Simbolo</th>
+                <th> Nombre</th>
+                <th> #Acciones</th>
+                <th> Precio unitario</th>
+                <th> Hora y fecha de operacion</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for transaction in transactions %}
+
+            <tr>
+                <td id="symbol"> {{transaction.symbol}}</td>
+                <td> {{transaction.name}}</td>
+                <td> {{transaction.shares}}</td>
+                <td> {{transaction.price | usd}}</td>
+                <td> {{transaction.transac_d}}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+    <table class="summarise">
+
+    </table>
+
+    </div>
+
+
+{% endblock%}

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted stock
+{% endblock %}
+
+
+{% block main %}
+
+    <div class="time"> {{val[0][0]}} {{val[0][1]}} {{val[0][2]}}</div>
+
+    <div class="alert alert-dark" role="alert">
+        <p class="share_price"> Una accion de {{stock_info["name"]}} ({{stock_info["symbol"]}}) cuesta el dia de hoy {{stock_info["price"] | usd}} dolares americanos</p>
+    </div>
+
+
+{% endblock %}

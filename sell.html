@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% set active_page = "vender" %}
+
+{% block title %}
+    Vender Acciones
+{% endblock %}
+
+{% block main %}
+
+ <div class="time"> {{val[0][0]}} {{val[0][1]}} {{val[0][2]}}</div>
+
+<div class= "form-group sell_butt">
+
+<form action=/sell method="post">
+
+<select name="symbol" class="form-control">
+
+    <option disabled selected value=""> Simbolo</option>
+
+        {% for stocks_own in stocks_own %}
+
+        <option >{{stocks_own.symbol}} </option>
+
+        {% endfor %}
+
+    <input id="sell_box" autofocus autocomplete="off" name="shares" class="form-control" type="text" placeholder= "Cantidad">
+
+    <div class="try">
+    <button class="btn btn-primary sell_but" type="submit"> Vender </button>
+    </div>
+
+</select>
+
+</form>
+
+</div>
+
+{% endblock%}

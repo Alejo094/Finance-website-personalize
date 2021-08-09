@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% set active_page = "quote" %}
+
+{% block title %}
+    Cotizar Acciones
+{% endblock %}
+
+
+{% block main %}
+
+    <div class="time"> {{val[0][0]}} {{val[0][1]}} {{val[0][2]}}</div>
+
+    <div class="cotiz">
+    <form action=/quote method="post">
+
+    <div class ="form-group">
+        <input autocomplete="off" autofocus class= "form-control" name = "symbol"  placeholder= "Simbolo" type="text">
+    </div>
+
+    <div class="try">
+    <button class="btn btn-primary" type="submit"> Cotizar Accion </button>
+    </div>
+
+    </form>
+
+    </div>
+
+{% endblock %}

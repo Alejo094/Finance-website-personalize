@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% set active_page = "login" %}
+
+{% block title %}
+    Iniciar Sesion
+{% endblock %}
+
+{% block main %}
+
+
+
+    <h2 align="center"> Bienvenidos a Unal-Trade!</h2>
+
+    <div id="titulo_lg">
+    <h6> Por favor ingrese el usuario y contraseña de su cuenta</h6>
+    </div>
+
+    <form action="/login" method="post" class="main_form">
+
+        <div class="row">
+        <div class="form-group col-xs-3">
+            <input class="form-control" autocomplete="off" autofocus  name="username" placeholder="Usuario" type="text">
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="form-group col-xs-">
+            <input class="form-control" name="password" placeholder="Contraseña" type="password">
+        </div>
+        </div>
+
+        <button  id ="iniciar"class="btn btn-primary" type="submit">Iniciar Sesion</button>
+
+    </form>
+</div>
+
+{% endblock %}

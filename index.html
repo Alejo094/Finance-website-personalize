@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% set active_page = "index" %}
+
+{% block title %}
+    Resumen de Cuenta
+{% endblock %}
+
+{% block main %}
+
+    <div class="time"> {{val[0][0]}} {{val[0][1]}} {{val[0][2]}}</div>
+
+    <div class = "table">
+
+    <h2> Portafolio Actual</h2>
+
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <th> Simbolo</th>
+                <th> Nombre</th>
+                <th> # Acciones</th>
+                <th> Precio</th>
+                <th> Valor Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for users_cash_track_table in users_cash_track_table %}
+
+            <tr>
+                <td id="symbol"> {{users_cash_track_table.symbol}}</td>
+                <td> {{users_cash_track_table.name}}</td>
+                <td> {{users_cash_track_table.totalShares}}</td>
+                <td> {{users_cash_track_table.price | usd}}</td>
+                <td> {{users_cash_track_table.totalbought | usd}}</td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+    <h2> Estado de Cuenta</h2>
+
+    <table class="table table-hover table-dark">
+
+        <tr>
+            <td> Dinero Total Invertido</td>
+             <td>{{stock_boug[0]["stock_boug"] | usd}}</td>
+        </tr>
+
+        <tr>
+            <td> Dinero No Invertido</td>
+             <td >{{cash_left[0]["cash"] | usd}}</td>
+        </tr>
+        <tr>
+            <td> Dinero Total En Cuenta </td>
+            <td > {{money_accout[0]["money_accout"]|usd}}</td>
+
+        </tr>
+    </table>
+
+    </div>
+
+
+{% endblock %}
+
+
